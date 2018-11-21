@@ -31,22 +31,35 @@ def SVM_Train(X_train, y_train):
 
 # Define a function to train a set of signature pictures
 def train(dir):
-    sig_list = os.listdir(dir)
-    sig_list.remove('.DS_Store')
+    genuine_sig_list = os.listdir(dir+'genuine/')
+    forged_sig_list = os.listdir(dir+'forged/')
     sig_feature_list = []
     sig_label_list = []
 
-    for sig in sig_list:
-        #Load the signature
-        original = imread(dir+sig, flatten = 1)
-
-        #Retrieve features of the signature
-        sig_feature_list.append(get_feature(original))
-
-        #Label the signature
-        if re.match('.*t.*', sig):
-            sig_label_list.append('T')
+    for sig in genuine_sig_list:
+        if sig == '.DS_Store':
+            genuine_sig_list.remove('.DS_Store')
         else:
-            sig_label_list.append('F')
+            #Load the signature
+            original = imread(dir+'genuine/'+sig, flatten = 1)
+
+            #Retrieve features of the signature
+            sig_feature_list.append(get_feature(original))
+
+            #Label the signature
+            sig_label_list.append('Genuine')
+    
+    for sig in forged_sig_list:
+        if sig == '.DS_Store':
+            forged_sig_list.remobe('.DS_Store')
+        else:
+            #Load the signature
+            original = imread(dir+'forged/'+sig, flatten = 1)
+
+            #Retrieve features of the signature
+            sig_feature_list.append(get_feature(original))
+
+            #Label the signature
+            sig_label_list.append('Forged')
 
     return SVM_Train(sig_feature_list, sig_label_list)
