@@ -59,7 +59,7 @@ unzip signet_models.zip
 * Put forged signatures under ```sigver/trainsig/forged/```
 
 The model is writer-dependent and can be trained for one writer each time only.     
-I have put my own signatures (both genuine and forged) in them as a demo.
+I have put some signatures (both genuine and forged) in them as a demo.
 
 ## Test the App
 
@@ -77,7 +77,7 @@ python run_server.py
 ```
 
 Open Browser:  [http://localhost:9000](http://localhost:9000)  
-Upload a signature and check its genuineness
+Upload a signature and check its genuineness. You can use signatures in  ```sigver/testsig/``` as an example.
 
 ## References
 [1] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Learning Features for Offline Handwritten Signature Verification using Deep Convolutional Neural Networks" http://dx.doi.org/10.1016/j.patcog.2017.05.012 ([preprint](https://arxiv.org/abs/1705.05787))

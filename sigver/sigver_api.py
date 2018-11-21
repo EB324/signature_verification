@@ -51,7 +51,7 @@ def train(dir):
     
     for sig in forged_sig_list:
         if sig == '.DS_Store':
-            forged_sig_list.remobe('.DS_Store')
+            forged_sig_list.remove('.DS_Store')
         else:
             #Load the signature
             original = imread(dir+'forged/'+sig, flatten = 1)
