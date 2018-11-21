@@ -5,17 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Classifier App">
-  <meta name="author" content="Ramesh Sampath">
+  <meta name="author" content="Yibei">
   <link rel="icon" href="../../favicon.ico">
 
-  <title>Apparel Classifier App</title>
+  <title>Signature Verification</title>
 
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{ static_url('style.css') }}">
 
 </head>
 <body>
-<h1>Apparel Classifier</h1>
+<h1>Signature Verification</h1>
   <div class="container">
     <form id="predict-form" action="/" method="post" enctype="multipart/form-data">
       <div class="row">
@@ -43,16 +43,6 @@
             <span class="button-single glyphicon glyphicon-play"></span> Go!<br/>
           </a>
         </div>
-      </div>
-      <div class="row">
-        <input name="image-select" type="hidden" value="">
-        {% for select_img in select_images %}
-          <a class="select-img" href="">
-            <figure>
-              <img src="/static/select-img/{{select_img}}" alt="">
-            </figure>
-          </a>
-        {% end %}
       </div>
     </form>
     <hr/>
@@ -82,12 +72,6 @@
     });
   $("#predict-submit").click(function() {
       document.getElementById('predict-form').submit();
-  })
-  $('a.select-img img').click(function(e){
-      $('.selected').removeClass('selected');
-      $(this).addClass('selected');
-      $('input[name=image-select]').val($(this).attr("src"));
-      e.preventDefault();
   });
   </script>
 </body>
