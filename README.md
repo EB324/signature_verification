@@ -35,6 +35,7 @@ They can be installed by the following commands
 ```
 conda install -y "scipy=0.18.0" "pillow=3.0.0"
 pip install opencv-python
+pip install pandas
 pip install "Theano==0.9"
 pip install https://github.com/Lasagne/Lasagne/archive/master.zip
 pip install tornado
